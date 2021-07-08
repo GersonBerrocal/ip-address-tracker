@@ -37,6 +37,7 @@ html {
   font-family: main;
   font-size: 16px;
   color: #2b2b2b;
+  background-color: red;
 }
 
 .title {
@@ -106,7 +107,7 @@ html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-bottom: calc(0px - clamp(200px, 50%, 200px));
+  margin-bottom: -200px;
 }
 
 @media (min-width: 700px) {
@@ -116,7 +117,7 @@ html {
         -ms-flex-direction: row;
             flex-direction: row;
     text-align: left;
-    margin-bottom: calc(0px - clamp(200px, 50%, 80px));
+    margin-bottom: -80px;
   }
 }
 
