@@ -30,10 +30,9 @@ function searchIp(objectReq) {
     .getInfoOf(objectReq)
     .then(res => {
       if (res.status == '200') return res.json();
-      else throw new Error(res.err);
+      else throw new Error(res.err || 'Verifique la ip o dominio');
     })
     .then(res => {
-      console.log(res);
       paintCard(
         {
           ip: res.ip,
@@ -45,7 +44,7 @@ function searchIp(objectReq) {
       );
     })
     .catch(err => {
-      alert('Lo sentimos algo salio mal');
+      alert('Lo sentimos algo salio mal, no se pudo conectar con la api');
     });
 }
 function handlerFormIp(e) {
@@ -56,8 +55,10 @@ function handlerFormIp(e) {
 }
 formIp.addEventListener('submit', handlerFormIp);
 
+// user ip
 fetch('https://api64.ipify.org?format=json')
   .then(res => res.json())
   .then(ipUser => {
-    searchIp(verifyIpOrDomain(ipUser.ip)), (inputIp.value = ipUser.ip);
+    searchIp(verifyIpOrDomain(ipUser.ip));
+    inputIp.value = ipUser.ip;
   });
