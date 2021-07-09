@@ -3,11 +3,10 @@ export class ApiIp {
     this.base_url = `https://geo.ipify.org/api/v1?apiKey=${key}`;
   }
 
-  async getByIp(ip) {
-    const url = `${this.base_url}&ipAddress=${ip}`;
+  async getInfoOf({ ip = '', domain = '' }) {
+    const url = `${this.base_url}&ipAddress=${ip}&domain=${domain}`;
     const response = await fetch(url);
-    return response.json();
+    return response;
+    // return response.json();
   }
-
-  getByDomain() {}
 }

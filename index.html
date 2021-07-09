@@ -11,34 +11,41 @@
     <div class="container">
       <header class="header">
         <h1 class="title">IP Address Tracker</h1>
-        <div class="form">
+        <form action="#" id="form-ip" class="form">
           <input
             type="text"
-            name="input_ip"
+            name="input-ip"
             placeholder="Search for any IP address or domain"
             class="form-input"
+            id="input-ip"
           />
-          <button class="form-submit">
-            <img src="/images/icon-arrow.svg" alt="" />
+          <button class="form-submit" type="submit">
+            <img src="/images/icon-arrow.svg" alt="" id="input-ip" />
           </button>
-        </div>
+        </form>
         <!-- <div class="float-test"> -->
         <div class="ipData">
           <div class="ipData-section">
             <p class="ipData-section-title">IP ADDRESS</p>
-            <p class="ipData-section-description">192.168.174.101</p>
+            <p class="ipData-section-description" id="section-ip">
+              000.000.000.000
+            </p>
           </div>
           <div class="ipData-section">
             <p class="ipData-section-title">LOCATION</p>
-            <p class="ipData-section-description">Brooklyn, NY 10001</p>
+            <p class="ipData-section-description" id="section-location">
+              Region, City Postal
+            </p>
           </div>
           <div class="ipData-section">
             <p class="ipData-section-title">TIMEZONE</p>
-            <p class="ipData-section-description">UTC -05:00</p>
+            <p class="ipData-section-description" id="section-timezone">
+              UTC 00:00
+            </p>
           </div>
           <div class="ipData-section">
             <p class="ipData-section-title">LSP</p>
-            <p class="ipData-section-description">SpaceX Starlink</p>
+            <p class="ipData-section-description" id="section-lsp">-</p>
           </div>
         </div>
       </header>
